@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+Pharmacy_MS_SSC.v12.suo
+/Pharmacy_MS_SSC/bin/Debug
+/Pharmacy_MS_SSC/obj/Debug

@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{962F7B01-80F4-481C-A49A-E45BC18257ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pharmacy_MS_SSC</RootNamespace>
+    <AssemblyName>Pharmacy_MS_SSC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.Shell.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Extension\MicrosoftReport\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="ShakikulFramework">
+      <HintPath>..\Extension\ShakikulFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CustomReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\CustomReportViewer.Designer.cs">
+      <DependentUpon>CustomReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Db.cs" />
+    <Compile Include="Common\DbConnection.cs" />
+    <Compile Include="Common\frmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmWaiting.Designer.cs">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmGlobalSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmGlobalSetting.Designer.cs">
+      <DependentUpon>frmGlobalSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseReturn.Designer.cs">
+      <DependentUpon>FrmPurchaseReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicineUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicineUpdate.Designer.cs">
+      <DependentUpon>frmMedicineUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForgotPassword.Designer.cs">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserProfile.Designer.cs">
+      <DependentUpon>frmUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockReaminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockReaminder.Designer.cs">
+      <DependentUpon>frmStockReaminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPermission.Designer.cs">
+      <DependentUpon>frmMenuPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendorPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendorPayment.Designer.cs">
+      <DependentUpon>frmVendorPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDueCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDueCollection.Designer.cs">
+      <DependentUpon>frmDueCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpiringItemsSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpiringItemsSearch.Designer.cs">
+      <DependentUpon>frmExpiringItemsSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDayClosing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDayClosing.Designer.cs">
+      <DependentUpon>frmDayClosing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGateway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGateway.Designer.cs">
+      <DependentUpon>frmGateway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExpense.Designer.cs">
+      <DependentUpon>frmExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmREG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmREG.Designer.cs">
+      <DependentUpon>frmREG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaleReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaleReturn.Designer.cs">
+      <DependentUpon>frmSaleReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVillage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVillage.Designer.cs">
+      <DependentUpon>frmVillage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnion.Designer.cs">
+      <DependentUpon>frmUnion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpozila.Designer.cs">
+      <DependentUpon>frmUpozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmZilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmZilla.Designer.cs">
+      <DependentUpon>frmZilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVendor.Designer.cs">
+      <DependentUpon>frmAddVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDbBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDbBackup.Designer.cs">
+      <DependentUpon>frmDbBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignation.Designer.cs">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenericName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenericName.Designer.cs">
+      <DependentUpon>frmGenericName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOfficeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOfficeDetails.Designer.cs">
+      <DependentUpon>frmOfficeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewPatientInfo.Designer.cs">
+      <DependentUpon>frmNewPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPurchase.Designer.cs">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSale.Designer.cs">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockUpdate.Designer.cs">
+      <DependentUpon>frmStockUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTradeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTradeName.Designer.cs">
+      <DependentUpon>frmTradeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DailyExpense.cs" />
+    <Compile Include="Models\DateToDateSaleReport.cs" />
+    <Compile Include="Common\GlobalSettings.cs" />
+    <Compile Include="Models\Office.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\SaleInvoiceReport.cs" />
+    <Compile Include="Models\StockDetails.cs" />
+    <Compile Include="Models\TradeNames.cs" />
+    <Compile Include="Reports\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FrmPurchaseReturnReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FrmPurchaseReturnReport.Designer.cs">
+      <DependentUpon>FrmPurchaseReturnReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmArchiveReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmArchiveReport.Designer.cs">
+      <DependentUpon>frmArchiveReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmLedger.Designer.cs">
+      <DependentUpon>frmLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmVendorPaymentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmVendorPaymentReport.Designer.cs">
+      <DependentUpon>frmVendorPaymentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmDueCollectionReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmDueCollectionReport.Designer.cs">
+      <DependentUpon>frmDueCollectionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmPurchaseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmPurchaseReport.Designer.cs">
+      <DependentUpon>frmPurchaseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmStockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmStockReport.Designer.cs">
+      <DependentUpon>frmStockReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Models\DueCollection.cs" />
+    <Compile Include="Reports\Models\Ledger.cs" />
+    <Compile Include="Reports\Models\PatientInformation.cs" />
+    <Compile Include="Reports\Models\Purchase.cs" />
+    <Compile Include="Reports\Models\SaleMaster.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\frmStatementReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmStatementReport.Designer.cs">
+      <DependentUpon>frmStatementReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmExpenseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmExpenseReport.Designer.cs">
+      <DependentUpon>frmExpenseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmSaleReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmSaleReport.Designer.cs">
+      <DependentUpon>frmSaleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Models\PatientInfo.cs" />
+    <Compile Include="Reports\Models\SalePatientGroupMobile.cs" />
+    <Compile Include="Reports\Models\SubDueListPhoneNo.cs" />
+    <Compile Include="Reports\Models\VendorPayment.cs" />
+    <EmbeddedResource Include="Common\CustomReportViewer.resx">
+      <DependentUpon>CustomReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmGlobalSetting.resx">
+      <DependentUpon>frmGlobalSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseReturn.resx">
+      <DependentUpon>FrmPurchaseReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicineUpdate.resx">
+      <DependentUpon>frmMedicineUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForgotPassword.resx">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserProfile.resx">
+      <DependentUpon>frmUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockReaminder.resx">
+      <DependentUpon>frmStockReaminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPermission.resx">
+      <DependentUpon>frmMenuPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendorPayment.resx">
+      <DependentUpon>frmVendorPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDueCollection.resx">
+      <DependentUpon>frmDueCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpiringItemsSearch.resx">
+      <DependentUpon>frmExpiringItemsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDayClosing.resx">
+      <DependentUpon>frmDayClosing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGateway.resx">
+      <DependentUpon>frmGateway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExpense.resx">
+      <DependentUpon>frmExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmREG.resx">
+      <DependentUpon>frmREG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaleReturn.resx">
+      <DependentUpon>frmSaleReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVillage.resx">
+      <DependentUpon>frmVillage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnion.resx">
+      <DependentUpon>frmUnion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpozila.resx">
+      <DependentUpon>frmUpozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmZilla.resx">
+      <DependentUpon>frmZilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCategory.resx">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVendor.resx">
+      <DependentUpon>frmAddVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDbBackup.resx">
+      <DependentUpon>frmDbBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesignation.resx">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenericName.resx">
+      <DependentUpon>frmGenericName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOfficeDetails.resx">
+      <DependentUpon>frmOfficeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewPatientInfo.resx">
+      <DependentUpon>frmNewPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPurchase.resx">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSale.resx">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockUpdate.resx">
+      <DependentUpon>frmStockUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTradeName.resx">
+      <DependentUpon>frmTradeName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\FrmPurchaseReturnReport.resx">
+      <DependentUpon>FrmPurchaseReturnReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmArchiveReport.resx">
+      <DependentUpon>frmArchiveReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmLedger.resx">
+      <DependentUpon>frmLedger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmVendorPaymentReport.resx">
+      <DependentUpon>frmVendorPaymentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmDueCollectionReport.resx">
+      <DependentUpon>frmDueCollectionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmPurchaseReport.resx">
+      <DependentUpon>frmPurchaseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmStatementReport.resx">
+      <DependentUpon>frmStatementReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmExpenseReport.resx">
+      <DependentUpon>frmExpenseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmStockReport.resx">
+      <DependentUpon>frmStockReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmSaleReport.resx">
+      <DependentUpon>frmSaleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDueCollectionDateToDate.rdlc" />
+    <EmbeddedResource Include="Reports\rptLedger.rdlc" />
+    <EmbeddedResource Include="Reports\rptPurchase.rdlc" />
+    <EmbeddedResource Include="Reports\RptPurchaseReturn.rdlc" />
+    <EmbeddedResource Include="Reports\RptPurchaseReturnDetails.rdlc" />
+    <EmbeddedResource Include="Reports\rptSale2in.rdlc" />
+    <EmbeddedResource Include="Reports\rptSale3in.rdlc" />
+    <EmbeddedResource Include="Reports\rptSaleGroupMobile.rdlc" />
+    <EmbeddedResource Include="Reports\rptSaleDateToDate.rdlc" />
+    <EmbeddedResource Include="Reports\rptExpenseReport.rdlc" />
+    <EmbeddedResource Include="Reports\rptSaleInvoice.rdlc" />
+    <EmbeddedResource Include="Reports\rptSalePhoneNo.rdlc" />
+    <EmbeddedResource Include="Reports\rptSaleTradeCodeSaleDate.rdlc" />
+    <EmbeddedResource Include="Reports\rptVendorPayment.rdlc" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.DailyExpense.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.DateToDateSaleReport.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.Office.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.Sale.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.SaleInvoiceReport.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.SaleMaster.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.SaleMaster1.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Models.TradeNames.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.DueCollection.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.Ledger.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.PatientInfo.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.PatientInformation.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.PatientInformation1.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.Purchase.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.SalePatientGroupMobile.datasource" />
+    <None Include="Properties\DataSources\Pharmacy_MS_SSC.Reports.Models.SubDueListPhoneNo.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\DBBackup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DBRestore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Browse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_black.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_black.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pin.png" />
+    <None Include="Resources\Unpin.png" />
+    <None Include="Resources\eye_invisible.png" />
+    <None Include="Resources\eye_visible.png" />
+    <None Include="Resources\HomeYellow.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
